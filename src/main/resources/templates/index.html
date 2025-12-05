@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Feedback Portal</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+<div class="container">
+    <h1>Student Feedback Portal</h1>
+
+    <form action="/submit" method="post" class="form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="message" placeholder="Write feedback..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>All Feedback</h2>
+    <div th:if="${#lists.isEmpty(feedbackList)}">No feedback yet.</div>
+
+    <ul th:each="fb : ${feedbackList}">
+        <li>
+            <strong th:text="${fb.name}"></strong>:
+            <span th:text="${fb.message}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
