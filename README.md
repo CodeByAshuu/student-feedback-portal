@@ -22,6 +22,10 @@ Fully runnable using a single Maven command
 - Thymeleaf
 - Embedded Tomcat Server
 
+## Screenshot of OUTPUT
+![Web Output](image.png)
+![Output](output.png)
+
 ## Project Structure
 ```bash 
 student-feedback
